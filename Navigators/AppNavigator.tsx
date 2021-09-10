@@ -1,7 +1,7 @@
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {NavigationContainer} from '@react-navigation/native';
 import React from 'react';
-import {View, Text} from 'react-native';
+import Icon from 'react-native-vector-icons/Ionicons';
 import GiftScreen from '../Views/GiftScreen/GiftScreen';
 import HomeScreen from '../Views/HomeScreen/HomeScreen';
 import OrderScreen from '../Views/OrderScreen/OrderScreen';
@@ -13,7 +13,7 @@ const AppNavigator = () => {
     <NavigationContainer>
       <Tab.Navigator
         screenOptions={({route}) => ({
-          tabBarIcon: ({focused, color, size}) => {
+          tabBarIcon: ({focused}) => {
             let iconName;
             switch (route.name) {
               case 'Home':
@@ -29,19 +29,24 @@ const AppNavigator = () => {
                 break;
 
               case 'Order':
-                iconName = 'order';
+                iconName = 'pint';
                 break;
 
               case 'Other':
-                iconName = 'other';
+                iconName = 'ellipsis-horizontal';
                 break;
 
               default:
                 iconName = '';
                 break;
             }
-            console.log(iconName);
-            return <Text>{iconName}</Text>;
+            return (
+              <Icon
+                name={iconName}
+                size={30}
+                color={focused ? 'green' : 'gray'}
+              />
+            );
           },
           tabBarActiveTintColor: 'green',
           tabBarInactiveTintColor: 'gray',
