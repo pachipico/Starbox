@@ -3,3 +3,11 @@ export type ItemBox = {
   subText: string;
   iconName: string;
 };
+
+export type PayNavigatorParamList = {
+  PayScreen: undefined;
+};
+
+export type OtherNavigatorParamList = {
+  OtherScreen: undefined;
+};

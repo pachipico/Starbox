@@ -1,10 +1,12 @@
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {NavigationContainer} from '@react-navigation/native';
 import React from 'react';
+
 import Icon from 'react-native-vector-icons/Ionicons';
 import GiftScreen from '../Views/GiftScreen/GiftScreen';
 import HomeScreen from '../Views/HomeScreen/HomeScreen';
 import OrderScreen from '../Views/OrderScreen/OrderScreen';
+import OtherScreen from '../Views/OtherScreen/OtherScreen';
 import PayScreen from '../Views/PayScreen/PayScreen';
 
 const Tab = createBottomTabNavigator();
@@ -73,7 +75,7 @@ const AppNavigator = () => {
         />
         <Tab.Screen
           name="Other"
-          component={OrderScreen}
+          component={OtherScreen}
           options={{headerShown: false}}
         />
       </Tab.Navigator>

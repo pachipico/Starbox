@@ -1,26 +1,6 @@
 import React from 'react';
-import styled from 'styled-components/native';
 import ItemButton from '../Components/ItemButton';
-
-const Container = styled.SafeAreaView`
-  flex: 1;
-  margin: 10px;
-`;
-const HeaderText = styled.Text`
-  font-size: 24px;
-  font-weight: bold;
-`;
-
-const HeaderBox = styled.View`
-  padding-top: 20px;
-  margin-bottom: 10px;
-`;
-
-const BodyBox = styled.View`
-  flex: 1;
-  margin: 10px 0;
-  justify-content: space-between;
-`;
+import {BodyBox, Container, HeaderBox, HeaderText} from './Styles';
 
 const GiftScreen = () => {
   return (

@@ -1,17 +1,36 @@
 import React from 'react';
-import styled from 'styled-components/native';
 
-const Container = styled.SafeAreaView`
-  flex: 1;
-`;
-const HeaderText = styled.Text`
-  font-size: 24px;
-`;
+import {StackNavigationProp} from '@react-navigation/stack';
+import {RootStackParamList} from '../../types';
 
-const PayScreen = () => {
+type PayScreenProps = {
+  navigation: NavigatorProp;
+};
+export type NavigatorProp = StackNavigationProp<
+  RootStackParamList,
+  'PayScreen'
+>;
+
+import {
+  Container,
+  HeaderBox,
+  HeaderText,
+  OptionButton,
+} from '../GiftScreen/Styles';
+import {Text} from 'react-native';
+import Icon from 'react-native-vector-icons/Ionicons';
+
+const PayScreen: React.FC<PayScreenProps> = ({navigation}) => {
   return (
     <Container>
-      <HeaderText>Pay</HeaderText>
+      <HeaderBox>
+        <OptionButton>
+          <Text>
+            <Icon name="menu-outline" size={24} />
+          </Text>
+        </OptionButton>
+        <HeaderText>Pay</HeaderText>
+      </HeaderBox>
     </Container>
   );
 };
