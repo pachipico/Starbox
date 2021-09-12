@@ -10,4 +10,5 @@ export type PayNavigatorParamList = {
 
 export type OtherNavigatorParamList = {
   OtherScreen: undefined;
+  Setting: undefined;
 };

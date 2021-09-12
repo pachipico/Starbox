@@ -1,6 +1,6 @@
 import React from 'react';
 import ItemButton from '../Components/ItemButton';
-import {BodyBox, Container, HeaderBox, HeaderText} from './Styles';
+import {BodyBox, Container, HeaderBox, HeaderText, ScrollView} from './Styles';
 
 const GiftScreen = () => {
   return (

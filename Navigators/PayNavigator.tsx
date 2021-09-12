@@ -1,15 +1,19 @@
 import React, {FC} from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import PayScreen from '../Views/PayScreen/PayScreen';
-import {RootStackParamList} from '../types';
+import {PayNavigatorParamList} from '../types';
 
-const Stack = createNativeStackNavigator<RootStackParamList>();
+const Stack = createNativeStackNavigator<PayNavigatorParamList>();
 
 const PayNavigator: FC = () => {
   const {Screen, Navigator} = Stack;
   return (
     <Navigator>
-      <Screen name="PayScreen" component={PayScreen} />
+      <Screen
+        name="PayScreen"
+        component={PayScreen}
+        options={{headerShown: false}}
+      />
     </Navigator>
   );
 };

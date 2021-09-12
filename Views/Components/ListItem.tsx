@@ -24,17 +24,20 @@ const Wrapper = styled.View`
 `;
 
 interface ListProps {
-  text: String;
+  text: string;
   key: number;
+  icon?: string;
 }
 
-const ListItem: React.FC<ListProps> = ({text}) => {
+const ListItem: React.FC<ListProps> = ({text, icon}) => {
   return (
     <ItemBox>
       <Wrapper>
-        <IconWrapper>
-          <Icon name="star-outline" size={24} />
-        </IconWrapper>
+        {icon && (
+          <IconWrapper>
+            <Icon name={icon} size={26} color="gray" />
+          </IconWrapper>
+        )}
         <ItemText>{text}</ItemText>
       </Wrapper>
       <Icon name="chevron-forward" size={24} />

@@ -1,13 +1,13 @@
 import React from 'react';
 
 import {StackNavigationProp} from '@react-navigation/stack';
-import {RootStackParamList} from '../../types';
+import {PayNavigatorParamList} from '../../types';
 
 type PayScreenProps = {
   navigation: NavigatorProp;
 };
 export type NavigatorProp = StackNavigationProp<
-  RootStackParamList,
+  PayNavigatorParamList,
   'PayScreen'
 >;
 

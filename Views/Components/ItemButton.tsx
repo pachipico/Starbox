@@ -3,15 +3,15 @@ import styled from 'styled-components/native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 const ItemBox = styled.View`
-  border: 1px solid black;
+  border: 1px solid gray;
   height: 160px;
   justify-content: center;
+  border-radius: 10px;
   padding: 0px 20px;
+  margin-bottom: 40px;
 `;
 
-const ItemTextBox = styled.View`
-  justify-content: space-evenly;
-`;
+const ItemTextBox = styled.View``;
 
 const ItemHederText = styled.Text`
   font-size: 22px;

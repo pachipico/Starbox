@@ -6,8 +6,8 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import GiftScreen from '../Views/GiftScreen/GiftScreen';
 import HomeScreen from '../Views/HomeScreen/HomeScreen';
 import OrderScreen from '../Views/OrderScreen/OrderScreen';
-import OtherScreen from '../Views/OtherScreen/OtherScreen';
-import PayScreen from '../Views/PayScreen/PayScreen';
+import OtherNavigator from './OtherNavigator';
+import PayNavigator from './PayNavigator';
 
 const Tab = createBottomTabNavigator();
 const AppNavigator = () => {
@@ -60,7 +60,7 @@ const AppNavigator = () => {
         />
         <Tab.Screen
           name="Pay"
-          component={PayScreen}
+          component={PayNavigator}
           options={{headerShown: false}}
         />
         <Tab.Screen
@@ -75,7 +75,7 @@ const AppNavigator = () => {
         />
         <Tab.Screen
           name="Other"
-          component={OtherScreen}
+          component={OtherNavigator}
           options={{headerShown: false}}
         />
       </Tab.Navigator>

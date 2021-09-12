@@ -1,8 +1,9 @@
 import styled from 'styled-components/native';
 
-export const Container = styled.SafeAreaView`
+export const Container = styled.ScrollView`
   flex: 1;
   margin: 15px;
+  margin-top: 35px;
 `;
 
 export const BodyBox = styled.View`
@@ -21,7 +22,6 @@ export const HeaderBox = styled.View`
 `;
 
 export const OptionButton = styled.TouchableOpacity`
-  border: 1px solid yellow;
   position: absolute;
   right: 15px;
   top: 15px;
