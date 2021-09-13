@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components/native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
-const ItemBox = styled.View`
+const ItemBox = styled.TouchableOpacity`
   border: 1px solid gray;
   height: 160px;
   justify-content: center;

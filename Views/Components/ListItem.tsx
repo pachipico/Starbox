@@ -1,8 +1,11 @@
 import React from 'react';
 import Icon from 'react-native-vector-icons/Ionicons';
 import styled from 'styled-components/native';
+import {OtherNavigatorParamList} from '../../types';
 
-const ItemBox = styled.View`
+import {OtherNavigatorProp} from '../OtherScreen/OtherScreen';
+
+const ItemBox = styled.TouchableOpacity`
   height: 50px;
 
   align-items: center;
@@ -25,13 +28,18 @@ const Wrapper = styled.View`
 
 interface ListProps {
   text: string;
-  key: number;
+  key?: number;
   icon?: string;
+  keyword: string;
+  navigation: OtherNavigatorProp;
 }
 
-const ListItem: React.FC<ListProps> = ({text, icon}) => {
+const ListItem: React.FC<ListProps> = ({text, icon, navigation, keyword}) => {
   return (
-    <ItemBox>
+    <ItemBox
+      onPress={() => {
+        navigation.navigate(keyword as keyof OtherNavigatorParamList);
+      }}>
       <Wrapper>
         {icon && (
           <IconWrapper>
