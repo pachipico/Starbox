@@ -34,3 +34,10 @@ export const Ad = styled.Text`
   font-size: 30px;
   font-weight: bold;
 `;
+
+export const OptionButton = styled.TouchableOpacity`
+  position: absolute;
+  z-index: 10;
+  right: 15px;
+  top: 45px;
+`;

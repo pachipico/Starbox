@@ -25,11 +25,4 @@ export const HeaderBox = styled.View`
   background-color: #f3f2f2;
 `;
 
-export const OptionButton = styled.TouchableOpacity`
-  position: absolute;
-  z-index: 10;
-  right: 15px;
-  top: 45px;
-`;
-
 export const SmallHeader = styled.View``;

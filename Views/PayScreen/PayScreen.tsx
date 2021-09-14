@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Container, OptionButton, SafeAreaView} from '../GiftScreen/Styles';
+import {Container, SafeAreaView} from '../GiftScreen/Styles';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import Header from '../Components/Header';
 import {StackNavigationProp} from '@react-navigation/stack';
@@ -12,6 +12,7 @@ import {
   FloatingButton,
   FloatingButtonContainer,
   MiniBar,
+  OptionButton,
 } from './Styles';
 import CardView from '../Components/CardView';
 
@@ -26,8 +27,18 @@ export type NavigatorProp = StackNavigationProp<
 const PayScreen: React.FC<PayScreenProps> = ({navigation}) => {
   const [isTop, setIsTop] = useState(true);
   const cardData: CardData[] = [
-    {name: '스타벅스 e카드1', balance: 6700, barcode: '1234-5677-8765-4365'},
-    {name: '스타벅스 e카드2', balance: 16700, barcode: '1124-5657-8135-5342'},
+    {
+      name: '스타벅스 e카드1',
+      balance: '6,700',
+      barcode: '1234-5677-8765-4365',
+      isFavorite: false,
+    },
+    {
+      name: '스타벅스 e카드2',
+      balance: '16,700',
+      barcode: '1124-5657-8135-5342',
+      isFavorite: false,
+    },
   ];
 
   const renderItem = ({item}: {item: CardData}) => {
@@ -36,7 +47,10 @@ const PayScreen: React.FC<PayScreenProps> = ({navigation}) => {
 
   return (
     <SafeAreaView>
-      <OptionButton onPress={() => {}}>
+      <OptionButton
+        onPress={() => {
+          navigation.navigate('CardList', cardData);
+        }}>
         <Icon name="format-list-checkbox" size={24} />
       </OptionButton>
       <Container

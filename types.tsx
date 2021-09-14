@@ -6,6 +6,7 @@ export type ItemBox = {
 
 export type PayNavigatorParamList = {
   PayScreen: undefined;
+  CardList: CardData[];
 };
 
 export type OtherNavigatorParamList = {
@@ -43,6 +44,7 @@ export type Data = {
 
 export type CardData = {
   name: string;
-  balance: number;
+  balance: string;
   barcode: string;
+  isFavorite: boolean;
 };
