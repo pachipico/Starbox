@@ -5,16 +5,16 @@ import {OtherNavigatorProp} from '../OtherScreen/OtherScreen';
 
 import ListItem from './ListItem';
 
-const Container = styled.View<{isEnd: boolean}>`
+const Container = styled.View<{isEnd?: boolean}>`
   border-bottom-width: ${props => (props.isEnd ? 0 : 1)};
+  border-bottom-color: #9a999a;
 `;
 
 const ListTitle = styled.Text`
-  margin-top: 50px;
+  margin-top: 30px;
   margin-bottom: 10px;
   font-size: 18px;
   font-weight: bold;
-  border-bottom-color: gray;
 `;
 
 interface ListProps {

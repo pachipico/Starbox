@@ -1,20 +1,21 @@
 import React from 'react';
+import StickyParallaxHeader from 'react-native-sticky-parallax-header';
 import styled from 'styled-components/native';
-import List from '../Components/List';
 
 const Container = styled.SafeAreaView`
   flex: 1;
 `;
+const ScrollView = styled.ScrollView``;
 const HeaderText = styled.Text`
   font-size: 24px;
 `;
 
 const HomeScreen = () => {
-  const test = [{text: 'Home'}, {text: 'something else'}];
   return (
     <Container>
-      <HeaderText>Home</HeaderText>
-      <List title={'test'} data={test} />
+      <ScrollView>
+        <HeaderText>Home</HeaderText>
+      </ScrollView>
     </Container>
   );
 };

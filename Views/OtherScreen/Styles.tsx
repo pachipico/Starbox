@@ -7,6 +7,7 @@ export const List = styled.View<{isEnd?: boolean}>`
 `;
 
 export const BodyBox = styled.View`
+margin: 15px
   flex: 1;
 `;
 

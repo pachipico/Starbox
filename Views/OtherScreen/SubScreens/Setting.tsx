@@ -61,7 +61,7 @@ const Setting: React.FC<SettingProps> = ({navigation}) => {
   ];
 
   return (
-    <Container>
+    <Container showsVerticalScrollIndicator={false}>
       <NicknameView>
         <NicknameText>PACHIPI**</NicknameText>
         <LogOutButton>

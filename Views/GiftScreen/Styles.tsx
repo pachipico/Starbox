@@ -19,6 +19,8 @@ export const HeaderText = styled.Text`
 export const HeaderBox = styled.View`
   padding-top: 40px;
   padding-bottom: 20px;
+  align-items: flex-start;
+  background-color: #f3f2f2;
 `;
 
 export const OptionButton = styled.TouchableOpacity`
@@ -26,3 +28,5 @@ export const OptionButton = styled.TouchableOpacity`
   right: 15px;
   top: 15px;
 `;
+
+export const SmallHeader = styled.View``;
