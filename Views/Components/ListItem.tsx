@@ -17,7 +17,7 @@ const ItemText = styled.Text`
 `;
 
 const IconWrapper = styled.View`
-  width: 50px;
+  padding-right: 20px;
   align-items: center;
 `;
 

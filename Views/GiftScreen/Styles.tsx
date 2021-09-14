@@ -1,14 +1,16 @@
 import styled from 'styled-components/native';
-
+export const SafeAreaView = styled.View`
+  flex: 1;
+`;
 export const Container = styled.ScrollView`
   flex: 1;
-  margin: 15px;
   margin-top: 35px;
 `;
 
 export const BodyBox = styled.View`
   flex: 1;
   justify-content: space-between;
+  margin: 15px;
 `;
 
 export const HeaderText = styled.Text`
@@ -25,8 +27,9 @@ export const HeaderBox = styled.View`
 
 export const OptionButton = styled.TouchableOpacity`
   position: absolute;
+  z-index: 10;
   right: 15px;
-  top: 15px;
+  top: 45px;
 `;
 
 export const SmallHeader = styled.View``;

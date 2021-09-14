@@ -1,18 +1,19 @@
 import React from 'react';
 import styled from 'styled-components/native';
-import Icon from 'react-native-vector-icons/Ionicons';
-import {OtherNavigatorProp} from '../OtherScreen/OtherScreen';
 
 export const HeaderBox = styled.View<{isTop?: boolean}>`
-  padding-top: ${props => (props.isTop ? '40px' : '20px')}
-  padding-bottom: 20px;
-
+  padding-top: ${props => (props.isTop ? '50px' : '20px')}
+  padding-bottom: 15px;
+  padding-left: 15px;
+  border-bottom-width: 1px;
+  border-bottom-color: gray;
   align-items: ${props => (props.isTop ? 'flex-start' : 'center')};
   background-color: #f3f2f2;
 `;
 
 export const OptionButton = styled.TouchableOpacity`
   position: absolute;
+  z-index: 10;
   right: 15px;
   top: 15px;
 `;
@@ -21,17 +22,14 @@ export const HeaderText = styled.Text<{isTop?: boolean}>`
   font-weight: bold;
 `;
 type HeaderProps = {
-  navigation: OtherNavigatorProp;
   isTop?: boolean;
+  title: string;
 };
 
-const Header: React.FC<HeaderProps> = ({navigation, isTop}) => {
+const Header: React.FC<HeaderProps> = ({isTop, title}) => {
   return (
     <HeaderBox isTop={isTop}>
-      <OptionButton onPress={() => navigation.navigate('Setting')}>
-        <Icon name="settings-outline" size={24} />
-      </OptionButton>
-      <HeaderText isTop={isTop}>Other</HeaderText>
+      <HeaderText isTop={isTop}>{title}</HeaderText>
     </HeaderBox>
   );
 };

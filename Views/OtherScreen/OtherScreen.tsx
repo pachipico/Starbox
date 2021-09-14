@@ -4,10 +4,11 @@ import {StackNavigationProp} from '@react-navigation/stack';
 import {Data, OtherNavigatorParamList} from '../../types';
 import List from '../Components/List';
 
-import {Container} from '../GiftScreen/Styles';
+import {Container, SafeAreaView} from '../GiftScreen/Styles';
 
-import {BodyBox} from './Styles';
+import {BodyBox, OptionButton} from './Styles';
 import Header from '../Components/Header';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 type OtherScreenProps = {
   navigation: OtherNavigatorProp;
@@ -42,29 +43,34 @@ const OtherScreen: React.FC<OtherScreenProps> = ({navigation}) => {
   ];
 
   return (
-    <Container
-      showsVerticalScrollIndicator={false}
-      onScroll={curr => {
-        if (curr.nativeEvent.contentOffset.y !== 0) {
-          setIsTop(false);
-        } else {
-          setIsTop(true);
-          console.log('top');
-        }
-      }}
-      stickyHeaderIndices={[0]}>
-      <Header navigation={navigation} isTop={isTop} />
-      <BodyBox>
-        <List title="서비스" data={service} navigation={navigation} />
-        <List title="고객지원" data={support} navigation={navigation} />
-        <List
-          title="이용 정책"
-          data={policy}
-          isEnd={true}
-          navigation={navigation}
-        />
-      </BodyBox>
-    </Container>
+    <SafeAreaView>
+      <OptionButton onPress={() => navigation.navigate('Setting')}>
+        <Icon name="settings-outline" size={24} />
+      </OptionButton>
+      <Container
+        showsVerticalScrollIndicator={false}
+        onScroll={curr => {
+          if (curr.nativeEvent.contentOffset.y !== 0) {
+            setIsTop(false);
+          } else {
+            setIsTop(true);
+            console.log('top');
+          }
+        }}
+        stickyHeaderIndices={[0]}>
+        <Header isTop={isTop} title="Other" />
+        <BodyBox>
+          <List title="서비스" data={service} navigation={navigation} />
+          <List title="고객지원" data={support} navigation={navigation} />
+          <List
+            title="이용 정책"
+            data={policy}
+            isEnd={true}
+            navigation={navigation}
+          />
+        </BodyBox>
+      </Container>
+    </SafeAreaView>
   );
 };
 

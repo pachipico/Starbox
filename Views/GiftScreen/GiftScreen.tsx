@@ -1,13 +1,12 @@
 import React from 'react';
+import Header from '../Components/Header';
 import ItemButton from '../Components/ItemButton';
-import {BodyBox, Container, HeaderBox, HeaderText, ScrollView} from './Styles';
+import {BodyBox, Container} from './Styles';
 
 const GiftScreen = () => {
   return (
     <Container>
-      <HeaderBox>
-        <HeaderText>Gift</HeaderText>
-      </HeaderBox>
+      <Header title="Gift" isTop={true} />
       <BodyBox>
         <ItemButton
           titleText={'배송하기'}

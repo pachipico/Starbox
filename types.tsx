@@ -40,3 +40,9 @@ export type Data = {
   icon?: string;
   keyword: string;
 };
+
+export type CardData = {
+  name: string;
+  balance: number;
+  barcode: string;
+};

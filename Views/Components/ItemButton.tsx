@@ -8,7 +8,7 @@ const ItemBox = styled.TouchableOpacity`
   justify-content: center;
   border-radius: 10px;
   padding: 0px 20px;
-  margin-bottom: 40px;
+  margin: 20px 0px;
 `;
 
 const ItemTextBox = styled.View``;

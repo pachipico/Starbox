@@ -7,8 +7,8 @@ export const List = styled.View<{isEnd?: boolean}>`
 `;
 
 export const BodyBox = styled.View`
-margin: 15px
   flex: 1;
+  margin: 0px 15px;
 `;
 
 export const ListTitle = styled.Text`
@@ -18,3 +18,14 @@ export const ListTitle = styled.Text`
 `;
 
 export const Touchable = styled.TouchableOpacity``;
+
+export const OptionButton = styled.TouchableOpacity`
+  position: absolute;
+  z-index: 10;
+  right: 15px;
+  top: 45px;
+`;
+export const HeaderText = styled.Text<{isTop?: boolean}>`
+  font-size: ${props => (props.isTop ? '24px' : '14px')}
+  font-weight: bold;
+`;
