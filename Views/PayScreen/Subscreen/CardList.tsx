@@ -37,9 +37,9 @@ const CardListContainer = styled.View`
   align-items: center;
 `;
 
-const CardImage = styled.Image<{index: number}>`
+const CardImage = styled.Image<{isFavorite: boolean}>`
   height: 20px;
-  width: ${props => (props.index === 0 ? '120px' : '64px')}
+  width: ${props => (props.isFavorite ? '120px' : '64px')}
   aspect-ratio: 1.5;
   border-radius: 2px;
 `;
@@ -51,9 +51,9 @@ const CardTextContainer = styled.View`
 
 const CardName = styled.Text``;
 
-const CardBalance = styled.Text<{index: number}>`
+const CardBalance = styled.Text<{isFavorite: boolean}>`
   font-weight: bold;
-  font-size: ${props => (props.index === 0 ? '26px' : '16px')};
+  font-size: ${props => (props.isFavorite ? '26px' : '16px')};
 `;
 
 const Wrapper = styled.View`
@@ -86,6 +86,7 @@ const CardList: React.FC<CardListProps> = ({route, navigation}) => {
             setIsTop(true);
           }
         }}
+        scrollEventThrottle={16}
         stickyHeaderIndices={[0]}>
         <Header isTop={isTop} title={`카드(${cardData.length})`} />
         <AdView>
@@ -93,16 +94,19 @@ const CardList: React.FC<CardListProps> = ({route, navigation}) => {
         </AdView>
         {cardData.map((each, i) => {
           return (
-            <CardListContainer>
+            <CardListContainer key={i}>
               <Wrapper>
                 <CardImage
-                  index={i}
+                  isFavorite={each.isFavorite}
                   source={require('../../../Resources/starbucks_card.jpeg')}
                 />
                 <CardTextContainer>
                   <CardName>{each.name}</CardName>
 
-                  <CardBalance index={i}>{`${each.balance}원`}</CardBalance>
+                  <CardBalance
+                    isFavorite={
+                      each.isFavorite
+                    }>{`${each.balance}원`}</CardBalance>
                 </CardTextContainer>
               </Wrapper>
               <FavoriteButton

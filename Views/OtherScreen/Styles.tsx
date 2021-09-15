@@ -2,7 +2,7 @@ import styled from 'styled-components/native';
 
 export const List = styled.View<{isEnd?: boolean}>`
   flex: 1;
-  border-bottom-width: ${props => (props.isEnd ? 0 : 1)};
+  border-bottom-width: ${props => (props.isEnd ? '0' : '1')};
   border-bottom-color: gray;
 `;
 

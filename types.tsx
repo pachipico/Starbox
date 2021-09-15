@@ -8,7 +8,6 @@ export type PayNavigatorParamList = {
   PayScreen: undefined;
   CardList: {
     cardData: CardData[];
-    setCardData: React.Dispatch<React.SetStateAction<CardData[]>>;
   };
 };
 
@@ -50,4 +49,13 @@ export type CardData = {
   balance: string;
   barcode: string;
   isFavorite: boolean;
+};
+
+export type DrinkInfo = {
+  name: string;
+};
+
+export type HomeScreenNavigatorParamList = {
+  HomeScreen: undefined;
+  Test: undefined;
 };

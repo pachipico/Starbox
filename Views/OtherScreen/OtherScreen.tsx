@@ -56,8 +56,10 @@ const OtherScreen: React.FC<OtherScreenProps> = ({navigation}) => {
             setIsTop(true);
           }
         }}
+        scrollEventThrottle={16}
         stickyHeaderIndices={[0]}>
         <Header isTop={isTop} title="Other" />
+
         <BodyBox>
           <List title="서비스" data={service} navigation={navigation} />
           <List title="고객지원" data={support} navigation={navigation} />

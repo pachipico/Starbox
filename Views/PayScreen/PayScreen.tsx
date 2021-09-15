@@ -1,4 +1,4 @@
-import React, {useCallback, useEffect, useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {Container, SafeAreaView} from '../GiftScreen/Styles';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import Header from '../Components/Header';
@@ -42,14 +42,6 @@ const PayScreen: React.FC<PayScreenProps> = ({navigation}) => {
     },
   ]);
 
-  const storeData = async (initalData: CardData[]) => {
-    try {
-      const data = JSON.stringify(initalData);
-      await AsyncStorage.setItem('cards', data);
-    } catch (err) {
-      console.log(err);
-    }
-  };
   const getData = async () => {
     const data = await AsyncStorage.getItem('cards');
     if (data) {
@@ -89,6 +81,7 @@ const PayScreen: React.FC<PayScreenProps> = ({navigation}) => {
             setIsTop(true);
           }
         }}
+        scrollEventThrottle={16}
         stickyHeaderIndices={[0]}>
         <Header isTop={isTop} title="Pay" />
 

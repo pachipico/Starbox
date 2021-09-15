@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components/native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import {CardData} from '../../types';
+
 const CardContainer = styled.View`
   width: 90%;
   border: 1px solid black;
@@ -66,7 +67,7 @@ const CardView: React.FC<CardProps> = ({cardData}) => {
     <CardContainer>
       <Card source={require('../../Resources/starbucks_card.jpeg')} />
       <CardName>
-        {cardData.name}{' '}
+        {cardData.name}
         <Icon
           name="star-circle-outline"
           size={24}
