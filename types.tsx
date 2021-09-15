@@ -6,7 +6,10 @@ export type ItemBox = {
 
 export type PayNavigatorParamList = {
   PayScreen: undefined;
-  CardList: CardData[];
+  CardList: {
+    cardData: CardData[];
+    setCardData: React.Dispatch<React.SetStateAction<CardData[]>>;
+  };
 };
 
 export type OtherNavigatorParamList = {

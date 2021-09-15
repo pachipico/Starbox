@@ -65,7 +65,14 @@ const CardView: React.FC<CardProps> = ({cardData}) => {
   return (
     <CardContainer>
       <Card source={require('../../Resources/starbucks_card.jpeg')} />
-      <CardName>{cardData.name}</CardName>
+      <CardName>
+        {cardData.name}{' '}
+        <Icon
+          name="star-circle-outline"
+          size={24}
+          color={cardData.isFavorite ? 'yellow' : '#b5b5b5'}
+        />
+      </CardName>
       <CardBalance>{cardData.balance}원</CardBalance>
       <Barcode>BARCODE</Barcode>
       <BarcodeCode>{cardData.barcode}</BarcodeCode>

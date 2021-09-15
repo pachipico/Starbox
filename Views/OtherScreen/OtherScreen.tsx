@@ -54,7 +54,6 @@ const OtherScreen: React.FC<OtherScreenProps> = ({navigation}) => {
             setIsTop(false);
           } else {
             setIsTop(true);
-            console.log('top');
           }
         }}
         stickyHeaderIndices={[0]}>

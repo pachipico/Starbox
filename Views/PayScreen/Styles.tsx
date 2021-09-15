@@ -37,7 +37,7 @@ export const Ad = styled.Text`
 
 export const OptionButton = styled.TouchableOpacity`
   position: absolute;
-  z-index: 10;
+  z-index: 1;
   right: 15px;
   top: 45px;
 `;
