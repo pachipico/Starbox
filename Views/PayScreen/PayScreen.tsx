@@ -72,7 +72,9 @@ const PayScreen: React.FC<PayScreenProps> = ({navigation}) => {
         }}>
         <Icon name="format-list-checkbox" size={24} />
       </OptionButton>
+
       <Container
+        bounces={false}
         showsVerticalScrollIndicator={false}
         onScroll={curr => {
           if (curr.nativeEvent.contentOffset.y !== 0) {

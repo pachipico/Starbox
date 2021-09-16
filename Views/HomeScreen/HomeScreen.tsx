@@ -1,7 +1,6 @@
 import {StackNavigationProp} from '@react-navigation/stack';
 import React, {useState} from 'react';
-import {Text, View} from 'react-native';
-import StickyParallaxHeader from 'react-native-sticky-parallax-header';
+
 import Icon from 'react-native-vector-icons/FontAwesome';
 import {DrinkInfo, HomeScreenNavigatorParamList} from '../../types';
 import CardButton from '../Components/CardButton';
@@ -11,8 +10,13 @@ import {
   Container,
   FloatingButton,
   FloatingButtonText,
+  HeaderBox,
+  HeaderButtonText,
+  HeaderButtonView,
+  HeaderText,
   OptionButton,
   ScrollView,
+  TouchableWrapper,
 } from './styles';
 
 type HomeScreenProps = {
@@ -26,6 +30,8 @@ export type NavigatorProp = StackNavigationProp<
 const HomeScreen: React.FC<HomeScreenProps> = ({navigation}) => {
   const [lastOffset, setLastOffset] = useState<number>(0);
   const [scrollDirection, setScrollDirection] = useState<string>();
+  const [isTop, setIsTop] = useState<boolean>(true);
+
   const drinks: DrinkInfo[] = [
     {name: 'Latte'},
     {name: 'Americano'},
@@ -37,12 +43,26 @@ const HomeScreen: React.FC<HomeScreenProps> = ({navigation}) => {
   return (
     <Container>
       <OptionButton
+        isTop={isTop}
         onPress={() => {
           navigation.navigate('Test');
         }}>
-        <Icon name="bell-o" size={24} color="gray" />
+        <Icon name="bell-o" size={20} color="gray" />
       </OptionButton>
+      <HeaderBox isTop={isTop}>
+        <HeaderText isTop={isTop}>신선해진 가을밤</HeaderText>
+        <HeaderText isTop={isTop}>가볍게 산책할까요?</HeaderText>
+        <HeaderButtonView isTop={isTop}>
+          <TouchableWrapper>
+            <HeaderButtonText>What's New?</HeaderButtonText>
+          </TouchableWrapper>
+          <TouchableWrapper>
+            <HeaderButtonText>Coupon</HeaderButtonText>
+          </TouchableWrapper>
+        </HeaderButtonView>
+      </HeaderBox>
       <ScrollView
+        bounces={false}
         onScrollEndDrag={e => {
           const last = e.nativeEvent.contentOffset.y;
           setLastOffset(last);
@@ -50,8 +70,12 @@ const HomeScreen: React.FC<HomeScreenProps> = ({navigation}) => {
         onScroll={e => {
           const what = e.nativeEvent.contentOffset.y - lastOffset;
           what > 0 ? setScrollDirection('down') : setScrollDirection('up');
+          if (e.nativeEvent.contentOffset.y !== 0) {
+            setIsTop(false);
+          } else {
+            setIsTop(true);
+          }
         }}
-        // bounces={false}
         scrollEventThrottle={16}>
         <HorizontalDrinkContainer title="Drinks" drinks={drinks} />
         <CardButton />
