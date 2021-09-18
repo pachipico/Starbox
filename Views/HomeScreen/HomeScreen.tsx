@@ -3,8 +3,8 @@ import React, {useState} from 'react';
 
 import Icon from 'react-native-vector-icons/FontAwesome';
 import {DrinkInfo, HomeScreenNavigatorParamList} from '../../types';
-import CardButton from '../Components/CardButton';
-import HorizontalDrinkContainer from '../Components/HorizontalDrinkContainer';
+import CardButton from '../Components/HomeScreen/CardButton';
+import HorizontalDrinkContainer from '../Components/HomeScreen/HorizontalDrinkContainer';
 
 import {
   Container,

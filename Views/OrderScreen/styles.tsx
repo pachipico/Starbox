@@ -40,3 +40,24 @@ export const Tab = styled.Text`
 export const Body = styled.View`
   flex: 1;
 `;
+
+export const SearchBar = styled.View`
+  background-color: #21201f;
+  flex-direction: row;
+  padding: 10px;
+  justify-content: space-between;
+`;
+
+export const Picker = styled.View`
+  border-bottom-width: 1px;
+  border-bottom-color: gray;
+`;
+
+export const PickerText = styled.Text`
+  color: white;
+  padding: 3px;
+`;
+
+export const IconWrapper = styled.Text`
+  color: white;
+`;

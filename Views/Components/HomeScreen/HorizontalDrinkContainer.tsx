@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components/native';
-import {DrinkInfo} from '../../types';
+import {DrinkInfo} from '../../../types';
 import DrinkView from './DrinkView';
 const Container = styled.View``;
 

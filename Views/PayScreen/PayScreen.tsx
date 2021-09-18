@@ -15,7 +15,7 @@ import {
   MiniBar,
   OptionButton,
 } from './Styles';
-import CardView from '../Components/CardView';
+import CardView from '../Components/PayScreen/CardView';
 
 type PayScreenProps = {
   navigation: NavigatorProp;

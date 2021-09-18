@@ -64,13 +64,13 @@ const AppNavigator = () => {
           options={{headerShown: false}}
         />
         <Tab.Screen
-          name="Gift"
-          component={GiftScreen}
+          name="Order"
+          component={OrderScreen}
           options={{headerShown: false}}
         />
         <Tab.Screen
-          name="Order"
-          component={OrderScreen}
+          name="Gift"
+          component={GiftScreen}
           options={{headerShown: false}}
         />
         <Tab.Screen
