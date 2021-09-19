@@ -66,9 +66,7 @@ const OrderScreen = () => {
             </Wrapper>
           </TabContainer>
         </HeaderBox>
-        <Body>
-          <TabNav />
-        </Body>
+        <Body>{currTab === 'flex-start' && <TabNav />}</Body>
       </Container>
       <SearchBar>
         <Picker>
