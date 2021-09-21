@@ -59,3 +59,8 @@ export type HomeScreenNavigatorParamList = {
   HomeScreen: undefined;
   Test: undefined;
 };
+
+export type OrderScreenNavigatorParamList = {
+  OrderScreen: undefined;
+  CakeReservation: undefined;
+};

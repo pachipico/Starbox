@@ -4,8 +4,8 @@ import React from 'react';
 
 import Icon from 'react-native-vector-icons/Ionicons';
 import GiftScreen from '../Views/GiftScreen/GiftScreen';
-import OrderScreen from '../Views/OrderScreen/OrderScreen';
 import HomeScreenNavigator from './HomeScreenNavigator';
+import OrderNavigator from './OrderNavigator';
 import OtherNavigator from './OtherNavigator';
 import PayNavigator from './PayNavigator';
 
@@ -65,7 +65,7 @@ const AppNavigator = () => {
         />
         <Tab.Screen
           name="Order"
-          component={OrderScreen}
+          component={OrderNavigator}
           options={{headerShown: false}}
         />
         <Tab.Screen

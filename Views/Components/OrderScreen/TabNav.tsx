@@ -5,7 +5,9 @@ import Food from '../../OrderScreen/SubScreen/FirstTab/Food';
 import Merchandize from '../../OrderScreen/SubScreen/FirstTab/Merchandize';
 const Container = styled.View`
   flex-direction: row;
-  flex-wrap: nowrap;
+  border-bottom-width: 1px;
+  border-bottom-color: gray;
+  padding-left: 15px;
 `;
 
 const TabText1 = styled.Text<{fontWeight: string}>`
@@ -23,7 +25,7 @@ const TabText3 = styled.Text<{fontWeight: string}>`
   font-weight: ${props => props.fontWeight};
 `;
 const TabMenu = styled.TouchableOpacity`
-  padding: 10px;
+  padding: 12px 20px;
 `;
 const Tab = () => {
   const [first, setFirst] = useState<string>('bold');

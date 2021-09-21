@@ -1,7 +1,7 @@
+import {StackNavigationProp} from '@react-navigation/stack';
 import React, {useState} from 'react';
-import {Text} from 'react-native';
-
 import Icon from 'react-native-vector-icons/Ionicons';
+import {OrderScreenNavigatorParamList} from '../../types';
 import {HeaderText} from '../Components/Header';
 import TabNav from '../Components/OrderScreen/TabNav';
 import {Container} from '../GiftScreen/Styles';
@@ -20,8 +20,17 @@ import {
   Touchable,
   Wrapper,
 } from './styles';
+import MyMenu from './SubScreen/SecondTab/MyMenu';
 
-const OrderScreen = () => {
+type OrderScreenProps = {
+  navigation: NavigatorProp;
+};
+export type NavigatorProp = StackNavigationProp<
+  OrderScreenNavigatorParamList,
+  'OrderScreen'
+>;
+
+const OrderScreen: React.FC<OrderScreenProps> = ({navigation}) => {
   const [isTop, setIsTop] = useState(true);
   const [currTab, setCurrTab] = useState('flex-start');
   return (
@@ -56,7 +65,7 @@ const OrderScreen = () => {
               </Touchable>
               <Touchable
                 onPress={() => {
-                  setCurrTab('flex-end');
+                  navigation.navigate('CakeReservation');
                 }}>
                 <Tab>홀케이크 예약</Tab>
               </Touchable>
@@ -66,7 +75,10 @@ const OrderScreen = () => {
             </Wrapper>
           </TabContainer>
         </HeaderBox>
-        <Body>{currTab === 'flex-start' && <TabNav />}</Body>
+        <Body>
+          {currTab === 'flex-start' && <TabNav />}
+          {currTab === 'center' && <MyMenu />}
+        </Body>
       </Container>
       <SearchBar>
         <Picker>
